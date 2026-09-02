@@ -1,0 +1,23 @@
+name: Build MoonWake Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+      with:
+        ref: moon
+
+    - name: Install Toolchain and Tool Packages
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y bc bison build-essential ccache flex libelf-dev libssl-dev libgit2-dev clang llvm lld
+
+    - name: Compile the Kernel
+      run: |
+        chmod +x build.sh
+        ./build.sh
+        
