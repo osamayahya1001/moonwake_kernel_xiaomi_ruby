@@ -15,9 +15,11 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y bc bison build-essential ccache flex libelf-dev libssl-dev libgit2-dev clang llvm lld
-
     - name: Compile the Kernel
       run: |
         chmod +x build.sh
-        ./build.sh ruby
+        make O=out ruby_defconfig
+        ./build.sh
+
+    - 
         
