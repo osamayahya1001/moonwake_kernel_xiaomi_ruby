@@ -19,5 +19,5 @@ jobs:
     - name: Compile the Kernel
       run: |
         chmod +x build.sh
-        ./build.sh
+        ./build.sh ruby
         
