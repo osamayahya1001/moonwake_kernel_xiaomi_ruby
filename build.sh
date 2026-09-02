@@ -6,6 +6,9 @@
 SECONDS=0 # builtin bash timer
 DEVICE="ruby"
 ZIPNAME="MoonWake-Private-$(date '+%Y%m%d-%H%M').zip"
+# Force the device configuration target
+BUILD_DEFCONFIG=ruby_defconfig
+
 # Fetch external RTL8821AU driver source code
 if [ ! -d "drivers/net/wireless/realtek/rtl8821au" ]; then
     git clone https://github.com drivers/net/wireless/realtek/rtl8821au -b v5.13.4
